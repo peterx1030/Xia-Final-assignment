@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results - Micro Search Engine</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #e1d8c6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0; 
+            flex-direction: column;
+        }
+
+        h5 {
+            color: #873b1f;
+            font-size: 24px; 
+            margin-bottom: 20px; 
+        }
+
+        div {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto; 
+            margin-bottom: 20px; 
+        }
+
+        p {
+            font-size: 18px; 
+            color: #873b1f;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4f3aef; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #bb796d; 
+        }
+    </style>
+</head>
+<body>
+    <h5>This is the only Image you are Allowed to Use... Don't Wander off!</h5>
+
+    {% if pics %}
+        <div>
+            <img src="{{ pics[0] }}" alt="Image related to {{ name }}">
+        </div>
+    {% else %}
+        <p>No results found for "{{ name }}". Try a different search term.</p>
+    {% endif %}
+
+    <a href="/">Back to search</a>
+</body>
+</html>
